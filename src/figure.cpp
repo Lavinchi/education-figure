@@ -1,7 +1,6 @@
 #include "./figure.h"
 
 
-
 void Figure::calculateCircle(Point points[], int startDegree, int endDegree)
 {
     float radian;
@@ -9,16 +8,13 @@ void Figure::calculateCircle(Point points[], int startDegree, int endDegree)
 
     Point circlePoint = {_center.x + _figureWidth / 8,
                          _center.y - _figureWidth / 8};
-    float circleRadius = calculateDistance(circlePoint,
-                                                       this->_center);
+    float circleRadius = calculateDistance(circlePoint, _center);
 
     for (int i = 0; i < endDegree - startDegree; i++)
     {
         radian = convertDegreesToRadian(tmp++);
-        points[i].x = circleRadius * cos(radian) +
-                                     this->_center.x;
-        points[i].y = circleRadius * sin(radian) +
-                                     this->_center.y;
+        points[i].x = circleRadius * cos(radian) + _center.x;
+        points[i].y = circleRadius * sin(radian) + _center.y;
     }
 }
 
@@ -83,7 +79,7 @@ void Figure::rotateQuadrant(Point points[], int size, int degree)
     {
         points[i] = calculateRotatePosition(
                                             radian,
-                                            this->_center,
+                                            _center,
                                             {points[i].x, points[i].y});
     }
 }
@@ -128,14 +124,14 @@ Figure::~Figure()
 
 void Figure::move(int offsetX, int offsetY)
 {
-    this->_center.x += offsetX;
-    this->_center.y += offsetY;
+    _center.x += offsetX;
+    _center.y += offsetY;
 }
 
 void Figure::scale(int offsetScale)
 {
-    this->_figureHeight -= offsetScale;
-    this->_figureWidth -= offsetScale;
+    _figureHeight -= offsetScale;
+    _figureWidth -= offsetScale;
 }
 
 void Figure::draw(RenderWindow &window)

@@ -10,6 +10,7 @@
 using namespace sf;
 using namespace math;
 
+
 class Figure
 {
 
