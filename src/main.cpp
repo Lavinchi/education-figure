@@ -62,9 +62,9 @@ int main()
             }
         }
 
-        window.clear();
         figure.draw(window);
         window.display();
+        window.clear();
     }
 
     return 0;

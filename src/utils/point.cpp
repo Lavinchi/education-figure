@@ -8,4 +8,5 @@ struct Point
     int y;
 };
 
+
 #endif

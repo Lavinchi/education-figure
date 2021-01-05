@@ -16,4 +16,5 @@ namespace math
     Point calculateRotatePosition(float degree, Point center, Point point);
 }
 
+
 #endif
